@@ -1,14 +1,8 @@
-# Welcome to your CDK TypeScript project!
+# CDK PR 2 Pipeline
 
-This is a blank project for TypeScript development with CDK.
+There are times when feature-based development with git is preferred. Currently, AWS CodePipeline does not
+natively support constructing a stack when a PR is created in GitHub. This construct enables this functionality.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+An example of how to integrate into `cdk.pipelines` is provided as well
 
-## Useful commands
-
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+To use in your project, just `npm install cdk-pr-to-pipeline`
