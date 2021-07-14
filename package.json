@@ -4,7 +4,10 @@
   "description": "When a PR is made, this triggers and builds a stack for that PR branch for testing and dev",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,21 @@
   "bugs": {
     "url": "https://github.com/rayjanwilson/cdk-pr-to-pipeline/issues"
   },
-  "homepage": "https://github.com/rayjanwilson/cdk-pr-to-pipeline#readme"
+  "homepage": "https://github.com/rayjanwilson/cdk-pr-to-pipeline#readme",
+  "dependencies": {
+    "@aws-cdk/aws-codebuild": "^1.113.0",
+    "@aws-cdk/aws-iam": "^1.113.0",
+    "@aws-cdk/core": "^1.113.0",
+    "source-map-support": "^0.5.16"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.113.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "aws-cdk": "1.113.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  }
 }
