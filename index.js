@@ -1,5 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const cdk_pr_to_pipeline_1 = require("./src/cdk-pr-to-pipeline");
-exports.default = cdk_pr_to_pipeline_1.Pr2Pipeline;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlFQUFxRDtBQUVyRCxrQkFBZSxnQ0FBVyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUHIyUGlwZWxpbmV9IGZyb20gJy4vc3JjL2Nkay1wci10by1waXBlbGluZSdcblxuZXhwb3J0IGRlZmF1bHQgUHIyUGlwZWxpbmUiXX0=
