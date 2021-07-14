@@ -1,8 +1,13 @@
 {
   "name": "cdk-pr-to-pipeline",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "bin": {
     "cdk-pr-to-pipeline": "bin/cdk-pr-to-pipeline.js"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.js",
+  "engines": {
+    "node": ">= 12.0.0"
   },
   "scripts": {
     "build": "tsc",
@@ -21,7 +26,30 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
+    "@aws-cdk/aws-codebuild": "^1.113.0",
+    "@aws-cdk/aws-iam": "^1.113.0",
     "@aws-cdk/core": "1.113.0",
     "source-map-support": "^0.5.16"
-  }
+  },
+  "description": "This is a blank project for TypeScript development with CDK.",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayjanwilson/cdk-pr-to-pipeline.git"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "constructs",
+    "codebuild"
+  ],
+  "author": "Rayjan Wilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rayjanwilson/cdk-pr-to-pipeline/issues"
+  },
+  "homepage": "https://github.com/rayjanwilson/cdk-pr-to-pipeline#readme"
 }
