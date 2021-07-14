@@ -44,7 +44,7 @@ export class PipelineStack extends Stack {
 
     const pipeline = new CdkPipeline(this, "CICD", {
       // The pipeline name
-      pipelineName: "GenericServicePipeline",
+      // pipelineName: "GenericServicePipeline",
       cloudAssemblyArtifact,
 
       // Where the source can be found
