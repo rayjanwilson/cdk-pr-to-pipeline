@@ -1,0 +1,19 @@
+{
+  "name": "cdk-pr-to-pipeline",
+  "version": "1.0.0",
+  "description": "When a PR is made, this triggers and builds a stack for that PR branch for testing and dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayjanwilson/cdk-pr-to-pipeline.git"
+  },
+  "author": "Rayjan Wilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rayjanwilson/cdk-pr-to-pipeline/issues"
+  },
+  "homepage": "https://github.com/rayjanwilson/cdk-pr-to-pipeline#readme"
+}
