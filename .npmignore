@@ -1,6 +1,7 @@
 *.ts
 !*.d.ts
 !lib/index*
+!lib/destroy-stacks*
 # CDK asset staging directory
 .cdk.staging
 cdk.out

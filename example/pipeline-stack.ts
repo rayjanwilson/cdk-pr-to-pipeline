@@ -1,6 +1,6 @@
 import { Construct, SecretValue, Stack, StackProps } from "@aws-cdk/core";
-import * as codepipeline from "@aws-cdk/aws-codepipeline";
-import * as codepipeline_actions from "@aws-cdk/aws-codepipeline-actions";
+import { Artifact } from "@aws-cdk/aws-codepipeline";
+import { GitHubSourceAction } from "@aws-cdk/aws-codepipeline-actions";
 import {
   CdkPipeline,
   ShellScriptAction,
@@ -21,10 +21,10 @@ export class PipelineStack extends Stack {
   constructor(scope: Construct, id: string, props: Props) {
     super(scope, id, props);
 
-    const sourceArtifact = new codepipeline.Artifact();
-    const cloudAssemblyArtifact = new codepipeline.Artifact();
+    const sourceArtifact = new Artifact();
+    const cloudAssemblyArtifact = new Artifact();
 
-    const sourceAction = new codepipeline_actions.GitHubSourceAction({
+    const sourceAction = new GitHubSourceAction({
       actionName: "Source",
       oauthToken: SecretValue.secretsManager("github-token"),
       owner: props.github.owner,
@@ -36,7 +36,7 @@ export class PipelineStack extends Stack {
     const synthAction = SimpleSynthAction.standardNpmSynth({
       sourceArtifact,
       cloudAssemblyArtifact,
-      buildCommand: "npm run build",
+      buildCommand: "npm install && npm run build",
       environmentVariables: {
         branch: { value: props.github.branch },
       },
@@ -56,16 +56,17 @@ export class PipelineStack extends Stack {
     });
 
     // This is where we add the application stages
-    if (props.github.branch === "master" || props.github.branch === "main") {
+    if (props.github.branch === "main") {
       new Pr2Pipeline(this, "PrTrigger", { github: props.github });
-      // add deployment to test account and to prod
+      // need to add deployment to test account and to prod here
     } else {
       // must be a feature branch
+      // add deployment to dev account here
       const devStackOptions = { branch: props.github.branch };
       const devApp = new GenericAppStage(this, "Dev", devStackOptions);
       // build and test typescript code
       const devStage = pipeline.addApplicationStage(devApp, {
-        manualApprovals: true,
+        manualApprovals: true, // <--- this is set to manual so you don't build stacks by default, just the base stack
       });
       const current_step_number = devStage.nextSequentialRunOrder();
       devStage.addActions(

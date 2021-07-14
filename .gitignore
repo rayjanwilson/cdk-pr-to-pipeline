@@ -3,6 +3,7 @@
 !jest.config.js
 !lib/index.d.ts
 !lib/index.js
+!lib/destroy-stacks*
 node_modules
 
 # CDK asset staging directory
