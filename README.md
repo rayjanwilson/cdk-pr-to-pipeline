@@ -7,6 +7,11 @@ An example of how to integrate into `cdk.pipelines` is provided as well
 
 To use in your project, just `npm install cdk-pr-to-pipeline`
 
+## Notes about the construct
+
+- it triggers builds on `PULL_REQUEST_CREATED` and `PULL_REQUEST_REOPENED`
+- it triggers deletions on `PULL_REQUEST_MERGED`
+
 ## Notes about the example
 
 - the github token has been stored in Secrets Manager

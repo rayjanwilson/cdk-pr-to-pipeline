@@ -36,7 +36,7 @@ export class PipelineStack extends Stack {
     const synthAction = SimpleSynthAction.standardNpmSynth({
       sourceArtifact,
       cloudAssemblyArtifact,
-      buildCommand: "npm run build",
+      buildCommand: "npm install && npm run build",
       environmentVariables: {
         branch: { value: props.github.branch },
       },

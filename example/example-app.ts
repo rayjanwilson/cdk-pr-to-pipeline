@@ -10,11 +10,11 @@ const github = {
 };
 
 if (process.env.CODEBUILD_WEBHOOK_HEAD_REF) {
-  github.branch =
-    process.env.CODEBUILD_WEBHOOK_HEAD_REF.split("/").pop() || "main";
+  console.log(process.env.CODEBUILD_WEBHOOK_HEAD_REF);
+  github.branch = process.env.CODEBUILD_WEBHOOK_HEAD_REF.split("/").pop() || "main";
 } else if (process.env.branch) {
   github.branch = process.env.branch;
 }
 
 const app = new cdk.App();
-new PipelineStack(app, `Example-PR2P-${github.branch}`, {github});
+new PipelineStack(app, `Example-PR2P-${github.branch}`, { github });
