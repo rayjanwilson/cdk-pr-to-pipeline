@@ -58,14 +58,15 @@ export class PipelineStack extends Stack {
     // This is where we add the application stages
     if (props.github.branch === "main") {
       new Pr2Pipeline(this, "PrTrigger", { github: props.github });
-      // add deployment to test account and to prod
+      // need to add deployment to test account and to prod here
     } else {
       // must be a feature branch
+      // add deployment to dev account here
       const devStackOptions = { branch: props.github.branch };
       const devApp = new GenericAppStage(this, "Dev", devStackOptions);
       // build and test typescript code
       const devStage = pipeline.addApplicationStage(devApp, {
-        manualApprovals: true,
+        manualApprovals: true, // <--- this is set to manual so you don't build stacks by default, just the base stack
       });
       const current_step_number = devStage.nextSequentialRunOrder();
       devStage.addActions(
