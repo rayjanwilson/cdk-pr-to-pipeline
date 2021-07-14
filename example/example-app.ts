@@ -6,12 +6,12 @@ import { PipelineStack } from "./pipeline-stack";
 const github = {
   owner: "rayjanwilson",
   repo: "cdk-pr-to-pipeline",
-  branch: "master",
+  branch: "main",
 };
 
 if (process.env.CODEBUILD_WEBHOOK_HEAD_REF) {
   github.branch =
-    process.env.CODEBUILD_WEBHOOK_HEAD_REF.split("/").pop() || "master";
+    process.env.CODEBUILD_WEBHOOK_HEAD_REF.split("/").pop() || "main";
 } else if (process.env.branch) {
   github.branch = process.env.branch;
 }
