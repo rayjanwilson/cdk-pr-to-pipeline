@@ -9,7 +9,7 @@ export class GenericAppStack extends cdk.Stack {
 
     const myLambda = new lambda.Function(this, 'Lambda', {
       runtime: lambda.Runtime.NODEJS_14_X,
-      code: lambda.Code.fromAsset('.'),
+      code: lambda.Code.fromAsset('./example'),
       handler: 'generic-lambda.handler',
     });
 
