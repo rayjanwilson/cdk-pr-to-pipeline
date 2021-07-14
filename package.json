@@ -1,6 +1,6 @@
 {
   "name": "cdk-pr-to-pipeline",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "bin": {
     "cdk-pr-to-pipeline": "bin/cdk-pr-to-pipeline.js"
   },
