@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "deploy": "npm run build &&ls -la cdk.out && npx cdk deploy --require-approval never",
+    "deploy": "npm run build && ls -la cdk.out && npx cdk deploy --require-approval never",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"

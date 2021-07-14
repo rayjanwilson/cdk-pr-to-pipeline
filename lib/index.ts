@@ -45,7 +45,7 @@ export class Pr2Pipeline extends Construct {
           build: {
             'on-failure': 'ABORT',
             commands: [
-              `[ $CODEBUILD_WEBHOOK_EVENT = "PULL_REQUEST_MERGED" ] && npx ts-node ./lib/destroy-stacks.ts || npm run deploy`,
+              '[ $CODEBUILD_WEBHOOK_EVENT = "PULL_REQUEST_MERGED" ] && npx ts-node ./lib/destroy-stacks.ts || npm run deploy',
             ],
           },
         },
